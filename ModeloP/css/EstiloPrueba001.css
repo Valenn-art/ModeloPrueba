@@ -1,0 +1,99 @@
+* { /* Aplica a todos los elementos del HTML */
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina padding */
+    box-sizing: border-box; /* Incluye border y padding dentro del ancho/alto */
+    text-decoration: none; /* Quita subrayado de enlaces */
+    list-style: none; /* Quita puntos de listas */
+    font-family: var(--arial); /* Usa la fuente definida en la variable */
+    overflow: auto;
+}
+
+:root {
+    /* Variables CSS reutilizables */
+    --bg-primario1: linear-gradient(to bottom, rgb(243, 159, 32), white); /* Degradado */
+    --bg-primario: rgb(235, 217, 120); /* Color de fondo */
+    --bg-secundario: #fa8f64; /* Otro color de fondo */
+    --texto-primario: rgb(216, 142, 100); /* Color de texto principal */
+    --ancho50: 50%; /* Ancho del 50% */
+    --arial: 'arial'; /* Fuente Arial */
+    --sombra-chica: 0px 0px 5px rgba(97, 141, 95, 0.5); 
+    --sombra-grande: 0px 0px 20px rgba(240, 206, 206, 0.5); 
+}
+
+body {
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    background: var(--bg-primario1); /* Fondo con degradado */
+    color: white; /* Color de texto blanco por defecto */
+    font-family: var(--arial); /* Fuente Arial */
+}
+
+.bienvenida {
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Orden en columna */
+    height: 60%; /* Ocupa el 60% de la pantalla */
+    color: black; /* Texto en negro */
+    align-items: center; /* Centra los elementos horizontalmente */
+}
+
+.logo {
+    height: 500px; /* Altura fija del logo */
+    width: 500px; /* Ancho fijo del logo */
+    margin: auto; /* Centrado horizontal */
+    /* mix-blend-mode: multiply; → Comentado (sirve para fusionar colores con el fondo) */
+}
+
+.logoBienvenida {
+    height: 20vh; /* Altura del 20% de la pantalla */
+    width: 20vh; /* Mismo tamaño en ancho */
+    box-shadow: var(--sombra-grande); /* Sombra alrededor */
+    filter: drop-shadow(var(--sombra-grande)); /* Sombra flotante */
+}
+
+.login {
+    color: black; /* Texto negro */
+    display: flex; /* Flexbox para alinear contenido */
+    height: 40%; /* Ocupa 40% de la altura total */
+    flex-direction: column; /* Acomoda en columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    padding: .5em; /* Relleno interno */
+
+    /* Estilos para los inputs de email y contraseña */
+    input[type="email"],
+    input[type="password"] {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        height: 2.4em; /* Altura del campo */
+        padding: 0.5em; /* Espaciado interno */
+        border-radius: .25em; /* Bordes redondeados */
+        border: none; /* Sin borde */
+        background: var(--bg-secundario); /* Fondo del input */
+    }
+
+    /* Estilos para el botón de enviar */
+    .boton {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        height: 2em;
+        background: var(--bg-secundario);
+        color: white;
+        border-radius: .25em;
+        border: none;
+        cursor: pointer; /* Cambia el cursor al pasar por encima */
+        font-weight: bold;
+        text-align: center;
+        line-height: 2.4em; /* Centra verticalmente el texto del botón */
+        margin-top: 10px;
+    }
+}
+
+.form {
+    display: grid; /* Usa Grid (rejilla) permite alinear elementos */
+    height: 10vh; 
+    width: 100%;
+    /* flex-direction: space-between */
+}
+
+.Iniciar {
+    display: flex; /* Flexbox para alinear el texto */
+    justify-content: center; /* Centra el texto horizontalmente */
+    margin-top: -1em; /*  Hace que suba un poco el texto respecto a su posición */
+}

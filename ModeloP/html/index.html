@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido Pirulo</title>
+    <!-- Enlaza una hoja de estilos externa (si tienes el archivo) -->
+    <link rel="stylesheet" href="../css/EstiloPrueba001.css">
+
+    <style>
+        /* Clase reutilizable para usar Flexbox en fila con espacio entre elementos */
+        .d-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Estilo general del encabezado */
+        header {
+            color: black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Asegura que el texto del body sea negro */
+        body {
+            color: black !important;
+        }
+
+        /* Lista horizontal de categorías de comida */
+        .listaCategorias {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            list-style: none; /* Quita los puntitos de la lista */
+            gap: 10px;
+            padding: 10px;
+            margin: 0;
+            overflow-x: auto; /* Hace scroll horizontal si hay muchas categorías */
+        }
+
+        /* Cada categoría: caja con ícono y nombre */
+        .itemCat {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 1 0 150px; /* Mínimo 150px, pero se puede estirar */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.747);
+            padding: .25em;
+            text-align: center;
+        }
+
+        /* Para los productos, cada uno estará en una fila y uno debajo del otro */
+        .listaProducto {
+            display: flex;
+            flex-direction: column; /* Alinea los productos de arriba hacia abajo */
+            gap: 1em; /* Espacio entre los productos */
+            padding: 1em;
+        }
+
+        /* Cada producto individual */
+        .productoItem {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex: 1 0 150px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.747);
+            padding: .25em;
+            text-align: center;
+        }
+
+        /* Contenedor de datos del producto: nombre, precio y botón */
+        .datosProducto {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Imagen del producto con bordes redondeados */
+        .productoImagen {
+            height: 100px;
+            overflow: hidden;
+            padding: 0;
+            border-radius: 1em;
+        }
+
+        /* Ajusta la imagen para que se ajuste bien en el contenedor */
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* La imagen se recorta para llenar el espacio sin deformarse */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Encabezado superior con nombre de usuario y carrito -->
+    <header class="d-flex">
+        <div class="menuPerfil">
+            <button>🎆</button> <!-- Botón decorativo -->
+            <span class="userName">Pirulo</span> <!-- Nombre de usuario -->
+        </div>
+
+        <div class="carrito">🛒</div> <!-- Icono de carrito -->
+    </header>
+
+    <!-- Lista de categorías (por ejemplo: Hamburguesas, Pizzas, etc.) -->
+    <nav class="categorias">
+        <ul class="listaCategorias">
+            <li class="itemCat">
+                <div class="icono">🍔</div>
+                Hamburguesas
+            </li>
+            <li class="itemCat">
+                <div class="icono">🥖</div>
+                Pizzas
+            </li>
+            <li class="itemCat">
+                <div class="icono">🍣</div>
+                Sushi
+            </li>
+            <li class="itemCat">
+                <div class="icono">🍰</div>
+                Postres
+            </li>
+            <li class="itemCat">
+                <div class="icono">🍹</div>
+                Bebidas
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Lista de productos -->
+    <section class="listaProducto">
+        <!-- Primer producto: Hamburguesa -->
+        <article class="productoItem">
+            <div class="productoImagen">
+                <img src="../img/hamburguesa.jpg" alt="Hamburguesa">
+            </div>
+            <div class="datosProducto">
+                <div class="productoNombre">Hamburguesa</div>
+                <div class="productoPrecio">$500</div>
+                <button class="agregarCarrito">Agregar al carrito</button>
+            </div>
+        </article>
+
+        <!-- Segundo producto: Pancho -->
+        <article class="productoItem">
+            <div class="productoImagen">
+                <img src="../img/pancho.jpeg" alt="Pizza">
+            </div>
+            <div class="datosProducto">
+                <div class="productoNombre">Pancho</div>
+                <div class="productoPrecio">$700</div>
+                <button class="agregarCarrito">Agregar al carrito</button>
+            </div>
+        </article>
+
+        <!-- Tercer producto: Sushi -->
+        <article class="productoItem">
+            <div class="productoImagen">
+                <img src="../img/sushi.webp" alt="Sushi">
+            </div>
+            <div class="datosProducto">
+                <div class="productoNombre">Sushi</div>
+                <div class="productoPrecio">$800</div>
+                <button class="agregarCarrito">Agregar al carrito</button>
+            </div>
+        </article>
+
+        <!-- Postre -->
+        <article class="productoItem">
+            <div class="productoImagen">
+                <img src="../img/postre.jpg" alt="Postre">
+            </div>
+            <div class="datosProducto">
+                <div class="productoNombre">Postre</div>
+                <div class="productoPrecio">$300</div>
+                <button class="agregarCarrito">Agregar al carrito</button>
+            </div>
+        </article>
+
+    </section>
+
+</body>
+
+</html>
